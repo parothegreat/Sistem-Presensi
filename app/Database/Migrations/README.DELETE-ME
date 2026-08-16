@@ -1,0 +1,1 @@
+This folder contains migration files. Old non-timestamped migrations were copied to timestamped names; you can remove files prefixed with 20251112_create_* if they are duplicates. They are kept temporarily for safety.

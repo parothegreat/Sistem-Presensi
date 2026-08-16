@@ -1,0 +1,86 @@
+### CodeIgniter 4 environment file
+
+#--------------------------------------------------------------------
+# ENVIRONMENT
+#--------------------------------------------------------------------
+CI_ENVIRONMENT = development
+
+#--------------------------------------------------------------------
+# APP
+#--------------------------------------------------------------------
+app.baseURL = 'http://localhost:8080/'
+# app.forceGlobalSecureRequests = true
+
+#--------------------------------------------------------------------
+# DATABASE
+#--------------------------------------------------------------------
+database.default.hostname = 127.0.0.1
+database.default.database = presensi
+database.default.username = presensi
+database.default.password = CHANGE_ME
+database.default.DBDriver = MySQLi
+database.default.port = 3306
+
+#--------------------------------------------------------------------
+# ENCRYPTION
+#--------------------------------------------------------------------
+encryption.key =
+
+#--------------------------------------------------------------------
+# SCHOOL INFO
+#--------------------------------------------------------------------
+SCHOOL_NAME='SMK Mitra Industri'
+SCHOOL_NPSN=69754539
+
+#--------------------------------------------------------------------
+# TELEGRAM NOTIFICATIONS
+#--------------------------------------------------------------------
+TELEGRAM_BOT_TOKEN=CHANGE_ME
+
+
+#--------------------------------------------------------------------
+# WHATSAPP NOTIFICATIONS (OneSender)
+#--------------------------------------------------------------------
+ONESENDER_API_ENDPOINT=https://example.invalid/api/v1/messages
+ONESENDER_API_KEY=CHANGE_ME
+ONESENDER_PHONE_NUMBER=628xxxxxxxxxx
+
+
+#--------------------------------------------------------------------
+# ATTENDANCE SETTINGS
+#--------------------------------------------------------------------
+# Holiday days (1=Monday, 5=Friday, 7=Sunday)
+# For Islamic schools (Jumat libur): 5
+# For government schools (Minggu libur): 7
+# For both: 5,7
+HOLIDAY_DAYS=5
+
+## JANGAN UBAH KODE DI BAWAH INI ##
+
+#--------------------------------------------------------------------
+# SESSION
+#--------------------------------------------------------------------
+#session.driver = 'CodeIgniter\Session\Handlers\FileHandler'
+#session.savePath = 'writable/session'
+
+#--------------------------------------------------------------------
+# BIOMETRIC API
+#--------------------------------------------------------------------
+BIOMETRIC_API_KEY=CHANGE_ME_AT_LEAST_32_RANDOM_CHARACTERS
+
+#--------------------------------------------------------------------
+# ANDROID PUSH NOTIFICATIONS
+#--------------------------------------------------------------------
+ANDROID_PUSH_ENABLED=true
+ANDROID_PUSH_TIMEOUT=10
+ANDROID_PUSH_MAX_RETRIES=5
+ANDROID_PUSH_CRON_INTERVAL=5
+ANDROID_PUSH_BATCH_SIZE=500
+
+# FIREBASE CONFIGURATION - Service Account Method (Production)
+# Gunakan literal \n untuk pemisah baris private key.
+FIREBASE_MODE=service_account
+FIREBASE_PROJECT_ID=your-project-id
+FIREBASE_SERVICE_ACCOUNT_EMAIL=firebase-adminsdk@your-project-id.iam.gserviceaccount.com
+FIREBASE_SERVER_KEY="-----BEGIN PRIVATE KEY-----\nCHANGE_ME\n-----END PRIVATE KEY-----"
+FIREBASE_SENDER_ID=000000000000

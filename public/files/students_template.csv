@@ -1,0 +1,3 @@
+nis,full_name,class,username,password,agama,wali_kelas_id,shift_id,phone_number,guardian_name,guardian_phone,rfid_id
+S001,Ahmad Rizki,X A,ahmad_rizki,password123,Islam,1,1,6281234567890,Bapak Rizki,6289876543210,RF001A123
+S002,Budi Santoso,X A,budi_santoso,password123,Kristen,1,1,6282234567891,Ibu Santoso,6289876543211,RF002B456
