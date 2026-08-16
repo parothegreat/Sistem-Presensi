@@ -71,10 +71,6 @@ class TelegramSettings extends Controller
         try {
             $context = stream_context_create([
                 'http' => ['timeout' => 10],
-                'ssl' => [
-                    'verify_peer' => false,
-                    'verify_peer_name' => false
-                ]
             ]);
             
             $json = file_get_contents($url, false, $context);

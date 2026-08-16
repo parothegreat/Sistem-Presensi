@@ -228,8 +228,8 @@ class TelegramBot extends Controller
                 CURLOPT_POSTFIELDS => $post,
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_TIMEOUT => 10,
-                CURLOPT_SSL_VERIFYPEER => false,
-                CURLOPT_SSL_VERIFYHOST => 0
+                CURLOPT_SSL_VERIFYPEER => true,
+                CURLOPT_SSL_VERIFYHOST => 2
             ]);
             $response = curl_exec($ch);
             $error = curl_error($ch);
@@ -248,11 +248,6 @@ class TelegramBot extends Controller
                     'content' => $post,
                     'timeout' => 10
                 ],
-                'ssl' => [
-                    'verify_peer' => false,
-                    'verify_peer_name' => false,
-                    'allow_self_signed' => true
-                ]
             ];
 
             $response = @file_get_contents($url, false, stream_context_create($opts));

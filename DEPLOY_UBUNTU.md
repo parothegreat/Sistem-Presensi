@@ -509,9 +509,9 @@ data siswa dan guru.
 Webhook menyimpan URL lama. Buka **Admin → Master → Registrasi Webhook**
 (`/admin/telegram-webhook`) dan daftarkan `https://presensi.domain-anda.com/telegram/webhook`.
 
-Setelah pakai domain ber-TLS valid, baris `'verify' => false` di
-`app/Helpers/TelegramHelper.php:212` sudah tidak diperlukan lagi dan sebaiknya dihapus —
-saat ini ia mematikan verifikasi sertifikat SSL.
+Koneksi outbound ke API Telegram sudah memverifikasi sertifikat TLS. Jika registrasi webhook
+gagal karena sertifikat, perbaiki paket `ca-certificates` atau waktu server; jangan mematikan
+verifikasi TLS di kode.
 
 ### 8c. Arahkan ulang perangkat
 

@@ -209,7 +209,6 @@ class TelegramHelper
                             'text' => $notification['message'],
                             'parse_mode' => 'HTML'
                         ],
-                        'verify' => false // Disable SSL verification for self-signed certs (ngrok)
                     ]);
 
                     $result = json_decode($response->getBody(), true);

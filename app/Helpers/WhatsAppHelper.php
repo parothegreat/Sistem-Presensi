@@ -42,10 +42,13 @@ class WhatsAppHelper
             }
 
             // Send via curl (non-blocking)
-            self::curlRequest($apiEndpoint, $data, $apiKey);
+            $sent = self::curlRequest($apiEndpoint, $data, $apiKey);
 
-            log_message('info', "WhatsAppHelper: Queued message for $phoneNumber ($recipientType)");
-            return true;
+            if ($sent) {
+                log_message('info', "WhatsAppHelper: Queued message for $phoneNumber ($recipientType)");
+            }
+
+            return $sent;
         } catch (\Exception $e) {
             log_message('error', "WhatsAppHelper: Error - " . $e->getMessage());
             return false;
@@ -87,8 +90,8 @@ class WhatsAppHelper
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_TIMEOUT, 10);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
 
         $response = curl_exec($ch);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
